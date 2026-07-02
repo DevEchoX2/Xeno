@@ -10,7 +10,6 @@ const savedCloakTitle = localStorage.getItem("cherri_cloakTitle") ?? "";
 const tabIcon = document.getElementById("tabIcon");
 const tabTitle = document.querySelector('title');
 
-const themeLink = document.getElementById('css-theme-link');
 const savedTheme = localStorage.getItem('cherri_theme') ?? 'default';
 
 if (savedCloakIcon || savedCloakTitle) {
@@ -29,13 +28,21 @@ function setTabIcon(v) {
 }
 
 function applyTheme(t) {
-  if (t !== "default") {
-    themeLink.href = `/assets/css/themes/${t}.css`;
-    localStorage.setItem("cherri_theme", t);
-  } else {
-    themeLink.href = `/assets/css/colors.css`;
-    localStorage.setItem("cherri_theme", "default");
-  }
+    if (typeof window.setSiteTheme === "function") {
+        window.setSiteTheme(t || "default");
+        return;
+    }
+
+    const themeLink = document.getElementById('css-theme-link');
+    if (!themeLink) return;
+
+    if (t !== "default") {
+        themeLink.href = `/assets/css/themes/${t}.css`;
+        localStorage.setItem("cherri_theme", t);
+    } else {
+        themeLink.href = `/assets/css/colors.css`;
+        localStorage.setItem("cherri_theme", "default");
+    }
 }
 
 currentWisp.textContent = savedWisp;

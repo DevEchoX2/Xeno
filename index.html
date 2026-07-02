@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/assets/fav.png">
-    <title>cherri</title>
+    <title>Wave</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
@@ -37,18 +37,18 @@
             window.location.replace('/start.html');
         }
     </script>
-    <meta name="title" content="Cherri">
+    <meta name="title" content="Wave">
     <meta name="description"
-        content="A state of the art unblocked games website. Clean, customizable, and now in pink!">
+        content="A clean, customizable unblocked games website with a premium black-and-white Wave design.">
     <meta name="keywords"
         content="unblocked, ub, school, games, gn-math, gnmath, unblockedgames, proxy, ultraviolet, scramjet, roblox, fortnite, nowgg, movies, tv, browser, webos, ubgames, apps, discord, freemovies, vm">
     <meta name="robots" content="index, nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta property="og:image" content="https://cherri.x8r.dev/assets/img/cover.png">
-    <meta property="twitter:image" content="https://cherri.x8r.dev/assets/img/cover.png">
+    <meta property="og:image" content="/assets/img/wave-logo.svg">
+    <meta property="twitter:image" content="/assets/img/wave-logo.svg">
     <meta name="language" content="English">
     <meta name="revisit-after" content="2 days">
-    <meta name="author" content="x8r and Cherri Team">
+    <meta name="author" content="x8r and Wave Team">
     <script defer src="https://cloud.umami.is/script.js"
         data-website-id="aa852720-724b-4441-be4c-6db9ef160eb9"></script>
     <link rel="stylesheet" href="/assets/css/font.css">
@@ -67,60 +67,48 @@
                 <a onclick="navTo('home?launch=1')" style="margin-top: 7.5px; margin-left: 10px;" href="#"
                     data-page="home">
                     <div class="hcontainer">
-                        <img src="/assets/img/fav.png" style="height: 24px; margin-top: -1px; margin-right: -0px;"
+                        <img src="/assets/img/wave-logo.svg" style="height: 24px; margin-top: -1px; margin-right: -0px;"
                             alt="">
                     </div>
                 </a>
             </li>
             <li class="divider"></li>
             <li>
-                <a onclick="toggleGames()" href="#" data-page="games">
-                    <i class="ri-gamepad-line"></i>
-                </a>
-            </li>
-            <li>
                 <a onclick="toggleApps()" href="#" data-page="apps">
                     <i class="ri-apps-line"></i>
                 </a>
             </li>
             <li>
-                <a onclick="navTo('movies')" href="#" data-page="movies">
-                    <i class="ri-video-line"></i>
+                <a onclick="openBrowser()" href="#" data-page="browser">
+                    <i class="ri-global-line"></i>
                 </a>
             </li>
             <li>
-                <a onclick="navTo('vms'); showToast('success', 'VMs are still in beta! Report bugs on the repo/Discord.', 'fas fa-exclamation-triangle')"
-                    href="#" data-page="vms">
-                    <i class="ri-computer-line"></i>
+                <a onclick="navTo('play?launch=1')" href="#" data-page="play">
+                    <i class="ri-play-circle-line"></i>
                 </a>
             </li>
             <li>
-                <a onclick="navTo('assistant'); showToast('success', 'AI is in beta! Report bugs on the Discord/Repo', 'fas fa-exclamation-triangle')"
-                    href="#" data-page="ai">
-                    <i class="ri-robot-2-line"></i>
-                </a>
-            </li>
-            <li>
-                <a onclick="navTo('chatrooms');" href="#" data-page="chatrooms">
-                    <i class="ri-chat-1-line"></i>
+                <a onclick="toggleThemeMode()" href="#" data-page="profile">
+                    <i class="ri-user-3-line"></i>
                 </a>
             </li>
             <li class="divider"></li>
             <li>
-                <a onclick="togglePartners()" href="#" data-page="movies">
-                    <i class="ri-shake-hands-fill"></i>
-                </a>
-            </li>
-            <!--
-            <li>
-                <a onclick="toggleChat()" href="#" data-page="social">
-                    <i class="fas fa-messages"></i>
-                </a>
-            </li>
-            -->
-            <li>
                 <a onclick="toggleSettings()" href="#" data-page="dc">
-                    <i class="ri-settings-3-line"></i>
+                    <i class="ri-equalizer-3-line"></i>
+                </a>
+            </li>
+            <li>
+                <a onclick="showToast('info', 'Chat is not available yet.', 'ri-message-3-line')" href="#"
+                    data-page="chat">
+                    <i class="ri-message-3-line"></i>
+                </a>
+            </li>
+            <li>
+                <a onclick="showToast('info', 'Favorites are coming soon.', 'ri-heart-3-line')" href="#"
+                    data-page="favorites">
+                    <i class="ri-heart-3-line"></i>
                 </a>
             </li>
             <li>
@@ -131,7 +119,7 @@
             <!--
             <li class="divider"></li>
             <li style="width: 85px">
-                <a onclick="navTo('gmbl'); showToast('warning', 'Cherri in NO WAY encourages gambling, betting, or any actions of the kind. This is just a joke.', 'fas fa-exclamation-triangle')"
+                <a onclick="navTo('gmbl'); showToast('warning', 'Wave in NO WAY encourages gambling, betting, or any actions of the kind. This is just a joke.', 'fas fa-exclamation-triangle')"
                     href="#" data-page="gmbl">
                     <i class="far fa-slot-machine"
                         style="font-size: 17px; transform: translateY(40%); left: 10px;"></i><span
@@ -143,19 +131,17 @@
     </nav>
     <div id="homeContent">
         <h1 class="text-7xl font-medium home-gradient">
-            cherri</h1>
-        <p id="splash" class="text-medium font-light text-white/50">
-            wsp
+            Wave</h1>
+        <p id="splash" class="text-medium font-light">
+            wave mode online
         </p>
-        <br>
         <div class="searchathome">
             <i class="fas fa-search"></i>
-            <input id="homesearch" disabled autocomplete="off" style="margin-right: -3%;" type="text"
-                placeholder="search not ready yet!" />
-            <i style="margin-right: 1%; animation: rotationlmao .45s linear infinite forwards; transition: 0.2s;"
+            <input id="homesearch" disabled autocomplete="off" style="margin-right: 0;" type="text"
+                placeholder="Search the web..." />
+            <i style="margin-right: 18px; animation: rotationlmao .45s linear infinite forwards; transition: 0.2s;"
                 class="fas fa-spinner-third"></i>
         </div>
-        <br><br>
         <span class="online-users"><b id="user-count">0</b> users currently online</span>
     </div>
 
@@ -336,7 +322,7 @@
                     </div>
 
                     <h2>about:blank</h2>
-                    <p>Create a new about:blank tab to hide Cherri from your history and filter.</p>
+                    <p>Create a new about:blank tab to hide Wave from your history and filter.</p>
                     <button onclick="
                         openAB()
                     " class="button"><i class="ri-external-link-line"></i>&nbsp;Open in about:blank</button>
@@ -461,8 +447,8 @@
                     <br>
 
                     <h2>Thank you!</h2>
-                    <p>Thanks for using Cherri! We hope you enjoyed your stay, and maybe star us on the <a
-                            href="https://github.com/x8rr/cherri" target="_blank">repository.</a></p>
+                        <p>Thanks for using Wave! We hope you enjoyed your stay, and maybe star us on the <a
+                            href="https://github.com/DevEchoX2/Xeno" target="_blank">repository.</a></p>
                 </div>
 
                 <div id="settings-updates" class="settings-page">
@@ -476,7 +462,7 @@
                 </div>
             </div>
 
-            <p class="version-tag">cherri <a href="https://github.com/x8rr/cherri/releases/latest"
+                <p class="version-tag">Wave <a href="https://github.com/DevEchoX2/Xeno/releases/latest"
                     target="_blank">stable v1.1.1</a></p>
         </div>
     </div>
@@ -566,28 +552,6 @@
             <br>
         </div>
         <br>
-    </div>
-
-    <div class="partners-wrapper settings-hidden">
-        <br>
-        <h1 style="text-align: center; font-size: 35px; color: var(--bright-text); font-weight: 500;">Partners</h1>
-        <br>
-        <div
-            class="partner-container h-[83%] overflow-y-scroll w-[475px] flex flex-wrap w-7/8 absolute left-1/2 translate-x-[-50%] justify-center">
-            <a href="https://prism.onl/" target="_blank" class="app partner-square">
-                <div class="bg-img" style="background: url('/assets/img/partners/prism.png');"></div>
-                <div class="app-title-cont">
-                    <h2 class="app-title-h2">Prism</h2>
-                </div>
-            </a>
-
-            <a href="https://github.com/Galaxy-Vortex/" target="_blank" class="app partner-square">
-                <div class="bg-img" style="background: url('/assets/img/partners/hydra.png');"></div>
-                <div class="app-title-cont">
-                    <h2 class="app-title-h2">Hydra Network</h2>
-                </div>
-            </a>
-        </div>
     </div>
 
     <button id="reset-theme" onclick="resetTheme()">CLICK HERE TO RESET YOUR THEME!</button>
@@ -748,15 +712,6 @@
                 }, 3)
                 homeContent.style.display = "block";
                 document.querySelector("#gohomeblock").style.display = "none"
-            } else if (l === "vms") {
-                document.querySelector("nav").style.opacity = 0
-                setTimeout(() => {
-                    document.querySelector("nav").style.display = "none"
-                }, 350)
-                document.querySelector("#gohomeblock").style.display = "block"
-                homeContent.style.display = "none";
-                contentFrame.style.display = "block";
-                contentFrame.src = `/pages/${l}.html`
             } else {
                 if (!document.body.contains(contentFrame)) {
                     document.body.appendChild(contentFrame);
@@ -801,7 +756,6 @@
         const appsHolder = document.querySelector(".apps-wrapper")
         const gamesHolder = document.querySelector(".games-wrapper")
         const downloadHolder = document.querySelector(".download-wrapper")
-        const partnerHolder = document.querySelector(".partners-wrapper")
 
         const general = document.querySelector("#settings-general")
         const cloaking = document.querySelector("#settings-cloaking")
@@ -834,8 +788,6 @@
                     toggleApps()
                 } else if (gamesHolder.classList.contains("settings-shown")) {
                     toggleGames()
-                } else if (partnerHolder.classList.contains("settings-shown")) {
-                    togglePartners()
                 } else if (downloadHolder.classList.contains("settings-shown")) {
                     toggleDownloadGames()
                 }
@@ -860,8 +812,6 @@
                     toggleSettings()
                 } else if (gamesHolder.classList.contains("settings-shown")) {
                     toggleGames()
-                } else if (partnerHolder.classList.contains("settings-shown")) {
-                    togglePartners()
                 } else if (downloadHolder.classList.contains("settings-shown")) {
                     toggleDownloadGames()
                 }
@@ -888,8 +838,6 @@
                     toggleApps()
                 } else if (gamesHolder.classList.contains("settings-shown")) {
                     toggleGames()
-                } else if (partnerHolder.classList.contains("settings-shown")) {
-                    togglePartners()
                 } else if (settingsHolder.classList.contains("settings-shown")) {
                     toggleSettings()
                 }
@@ -916,8 +864,6 @@
                     toggleApps()
                 } else if (settingsHolder.classList.contains("settings-shown")) {
                     toggleSettings()
-                } else if (partnerHolder.classList.contains("settings-shown")) {
-                    togglePartners()
                 } else if (downloadHolder.classList.contains("settings-shown")) {
                     toggleDownloadGames()
                 }
@@ -933,34 +879,6 @@
             } else {
                 gamesHolder.classList.remove("settings-shown")
                 gamesHolder.classList.add("settings-hidden")
-                const newBlurOverlay = document.querySelector(".blurOverlay")
-                newBlurOverlay.remove()
-            }
-        }
-
-        function togglePartners() {
-            if (partnerHolder.classList.contains("settings-hidden")) {
-                if (appsHolder.classList.contains("settings-shown")) {
-                    toggleApps()
-                } else if (settingsHolder.classList.contains("settings-shown")) {
-                    toggleSettings()
-                } else if (gamesHolder.classList.contains("settings-shown")) {
-                    toggleGames()
-                } else if (downloadHolder.classList.contains("settings-shown")) {
-                    toggleDownloadGames()
-                }
-                const newBlurOverlay = document.createElement("div")
-                newBlurOverlay.classList.add("blurOverlay")
-                document.body.appendChild(newBlurOverlay)
-                newBlurOverlay.addEventListener("click", () => {
-                    console.log("clicked")
-                    togglePartners()
-                })
-                partnerHolder.classList.remove("settings-hidden")
-                partnerHolder.classList.add("settings-shown")
-            } else {
-                partnerHolder.classList.remove("settings-shown")
-                partnerHolder.classList.add("settings-hidden")
                 const newBlurOverlay = document.querySelector(".blurOverlay")
                 newBlurOverlay.remove()
             }
@@ -993,24 +911,38 @@
                 frame.style.pointerEvents = "all"
             })
 
-            console.log("rSearch")
             newTab()
             nav(url)
             switchTab(aTab)
         }
+
+        function openBrowser() {
+            const browser = document.querySelector(".browser-container")
+            const activeFrame = document.querySelector(".viewframe.active")
+
+            if (!browser) return
+
+            if (!activeFrame) {
+                newTab()
+            }
+
+            browser.style.opacity = 1
+            browser.style.pointerEvents = "all"
+
+            document.querySelectorAll(".viewframe").forEach(frame => {
+                frame.style.opacity = 1
+                frame.style.pointerEvents = "all"
+            })
+        }
     </script>
     <script defer>
         window.addEventListener("DOMContentLoaded", () => {
-            console.log("cherri: dom content loaded")
             const homesearch = document.getElementById("homesearch");
 
             homesearch.addEventListener("keydown", (e) => {
-                console.log("askjdfaskhjlgdf")
                 if (e.key === "Enter") {
                     rSearch(homesearch?.value.trim());
-                    console.log("rsearching")
                 }
-                console.log("check")
             });
         })
     </script>
@@ -1085,16 +1017,21 @@
 
         window.addEventListener("DOMContentLoaded", () => {
             if (savedVer === null || !savedVer) {
-                showToast("success", "Welcome to Cherri!", "fas fa-hand-wave")
+                showToast("success", "Welcome to Wave!", "fas fa-hand-wave")
                 localStorage.setItem("cherri_siteVersion", siteVersion)
             } else if (savedVer !== siteVersion) {
-                showToast("success", "Cherri was updated! Check settings for more info.", "fas fa-check-circle")
+                showToast("success", "Wave was updated! Check settings for more info.", "fas fa-check-circle")
                 localStorage.setItem("cherri_siteVersion", siteVersion)
             }
         })
 
-        function resetTheme() {
-            localStorage.setItem("cherri_theme", "default")
+        function toggleThemeMode() {
+            if (typeof window.setSiteTheme === "function") {
+                window.setSiteTheme("black")
+            } else {
+                localStorage.setItem("cherri_theme", "black")
+            }
+
             window.location.reload()
         }
 

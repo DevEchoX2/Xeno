@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cherri | browser</title>
-    <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon" id="tabIcon">
+    <title>Wave | browser</title>
+    <link rel="shortcut icon" href="/assets/img/wave-logo.svg" type="image/svg+xml" id="tabIcon">
     <link rel="stylesheet" href="/assets/css/colors.css" id="css-theme-link">
     <link rel="stylesheet" href="/assets/css/elements.css">
     <link rel="stylesheet" href="/assets/css/font.css">
@@ -17,13 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/eruda@3.4.3/eruda.min.js"></script>
     <script>
         async function swium() {
-            await navigator.serviceWorker.register("/sw.js").then(() => {
-                console.log(
-                    "%ccherri" + "%c SJ sw registered!",
-                    "color: white; background: linear-gradient(to bottom right, #e2588d, #dbd7d7); border-radius: 5px; font-weight: bold; padding: 6px; font-family: monospace;",
-                    "color: white; background: transparent; border-radius: 0px; padding: 0px;"
-                );
-            }).catch(e => {
+            await navigator.serviceWorker.register("/sw.js").catch(e => {
                 console.log("Error registering service worker (SJ): " + e)
             });
         }
@@ -37,7 +31,7 @@
 
 <body>
     <div class="nav-logo">
-        <img src="/assets/img/fav.png" alt="" onclick="
+        <img src="/assets/img/wave-logo.svg" alt="" onclick="
             ul.classList.add('active');
             const blurr = document.createElement('div')
             blurr.classList.add('bluroverlay')
@@ -51,7 +45,7 @@
 
     <style>
         .browser-container {
-            background: var(--bg);
+            background: linear-gradient(180deg, rgba(6, 7, 10, 0.98) 0%, rgba(0, 0, 0, 0.98) 100%);
             width: 100%;
             height: 100vh;
             position: fixed;
@@ -69,7 +63,7 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 12px;
-            border: 1px solid var(--border-3);
+            border: 1px solid rgba(255, 255, 255, 0.10);
             display: none;
             z-index: 1000;
             opacity: 0;
@@ -124,14 +118,14 @@
             border-radius: 10px;
             transition: 0.2s;
             cursor: pointer;
-            background: var(--bg-2);
-            border: 1px solid var(--border-4);
-            color: var(--bright-text);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
         }
 
         .browser-buttons button:hover {
-            background: var(--bg-3);
-            color: var(--bright-text);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
         }
 
         .ri {
@@ -139,14 +133,14 @@
         }
 
         .browser-buttons input {
-            background: var(--bg-3);
-            border: 1px solid var(--border-4);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 10px;
             height: 40px;
             padding: 0 20px;
             flex: 1;
             transition: 0.2s;
-            color: var(--bright-text);
+            color: var(--text);
             font-family: Inter;
             outline: none;
             font-size: 14px;
@@ -154,21 +148,21 @@
 
         .browser-buttons input:focus {
             outline: none;
-            border: 1px solid var(--accent);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .browser-buttons input::placeholder {
-            color: var(--text);
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .tab {
-            background: var(--bg-2);
+            background: rgba(255, 255, 255, 0.04);
             max-width: 200px;
             min-width: 25px;
             padding: 10px 15px;
             border-radius: 10px;
             transition: 0.2s;
-            border: 1px solid var(--border-4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -184,12 +178,12 @@
         }
 
         .tab:hover {
-            background: var(--bg-3);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .tab.active {
-            background: var(--bg-3);
-            border: 1px solid var(--border-3);
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.14);
         }
 
         .tab img {
@@ -202,7 +196,7 @@
             font-size: 20px;
             cursor: pointer;
             transition: 0.2s;
-            color: var(--bright-text);
+            color: var(--text);
             flex-shrink: 0;
         }
 
@@ -211,20 +205,20 @@
         }
 
         .newtab {
-            background: var(--bg-2);
+            background: rgba(255, 255, 255, 0.04);
             height: 40px;
             width: 40px;
             border-radius: 10px;
             transition: 0.2s;
             cursor: pointer;
-            border: 1px solid var(--border-4);
-            color: var(--bright-text);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
             flex-shrink: 0;
         }
 
         .newtab:hover {
-            background: var(--bg-3);
-            color: var(--bright-text);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
         }
     </style>
 

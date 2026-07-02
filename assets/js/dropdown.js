@@ -158,6 +158,7 @@ const allWispOptions = [
 
 const allThemeOptions = [
   "default",
+  "black",
   "void",
   "ocean",
   "forest",
@@ -248,7 +249,7 @@ function applyDecoy(s) {
         s +
         " was selected"
     );
-    document.title = "cherri";
+    document.title = "Wave";
     favicon.href = "/assets/img/fav.png";
     return;
   } else {
@@ -315,8 +316,15 @@ createSelector(
 
 document.addEventListener("decoyUpdated", (e) => applyDecoy(e.detail));
 document.addEventListener("themeUpdated", (e) => {
-  const link = document.getElementById("css-theme-link");
   const theme = e.detail ?? "default";
+
+  if (typeof window.applyThemeStylesheet === "function") {
+    window.applyThemeStylesheet(theme);
+    return;
+  }
+
+  const link = document.getElementById("css-theme-link");
+  if (!link) return;
 
   if (theme !== "default") {
     link.href = `/assets/css/themes/${theme}.css`;

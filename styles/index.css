@@ -4,7 +4,7 @@ body {
     width: 100%;
     height: 100%;
     color: var(--text);
-    background-color: var(--bg-5);
+    background: #000000;
 }
 
 
@@ -24,19 +24,21 @@ body {
 }
 
 nav {
-    background: color-mix(in srgb, var(--bg) 25%, transparent 75%);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-4);
+    background: rgba(7, 9, 12, 0.82);
+    backdrop-filter: blur(18px) saturate(1.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     z-index: 5;
-    border-radius: 20px;
+    border-radius: 22px;
     width: fit-content;
-    margin-top: 10px;
-    height: 50px;
+    margin-top: 0;
+    height: 76px;
     opacity: 1;
     position: fixed;
     left: 50%;
-    padding-left: 3px;
-    padding-right: 3px;
+    bottom: 22px;
+    top: auto;
+    padding: 10px 14px;
     transform: translateX(-50%);
     overflow: hidden;
     pointer-events: none;
@@ -54,30 +56,31 @@ nav ul {
 }
 
 nav ul li {
-    margin: 2px;
+    margin: 5px;
     background: none;
-    border: 0px solid rgba(255, 255, 255, 0.171);
-    border-radius: 15px;
-    width: 40px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    width: 48px;
     aspect-ratio: 1;
-    margin-top: 4px;
-    height: 40px;
+    margin-top: 1px;
+    height: 48px;
     transition: 0.15s;
     pointer-events: all;
 }
 
 nav ul li.divider {
     width: 3px;
-    background: var(--bg-2);
+    background: rgba(255, 255, 255, 0.14);
     pointer-events: none;
-    height: 25px;
+    height: 30px;
     position: relative;
     top: 50%;
     transform: translateY(25%);
 }
 
 nav ul li:hover {
-    background: color-mix(in srgb, var(--bg-3) 60%, transparent 40%);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
     cursor: pointer;
 }
 
@@ -86,7 +89,7 @@ nav ul li.divider:hover {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -97,7 +100,7 @@ nav ul li a i {
     position: relative;
     left: 50%;
     transform: translate(-50%, 11%);
-    font-size: 22px;
+    font-size: 23px;
     cursor: pointer;
 }
 
@@ -124,10 +127,10 @@ li.toright {
 #homeContent {
     position: fixed;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
     z-index: 1;
+    width: 100%;
+    pointer-events: none;
 }
 
 #homeContent.hidden {
@@ -172,18 +175,37 @@ nav ul li.disabled {
 }
 
 .home-gradient {
-    background: linear-gradient(to bottom right, var(--accent), var(--accent-2));
-    background-clip: text;
-    color: transparent;
+    color: #ffffff;
+    letter-spacing: -0.04em;
+}
+
+#homeContent h1 {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 168px);
+    transform: translateX(-50%);
+    margin: 0;
+    pointer-events: none;
+}
+
+#splash {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 96px);
+    transform: translateX(-50%);
+    margin: 0;
+    pointer-events: none;
+    color: #ffffff;
+    opacity: 0.82;
 }
 
 #homesearch {
     background: transparent;
     height: 50px;
-    padding: 10px 20px;
-    width: 355px;
+    padding: 0 18px;
+    width: min(355px, calc(100vw - 48px));
     border-radius: 20px;
-    color: white;
+    color: #ffffff;
     font-size: 14px;
     font-family: Arial;
     transition: 0.2s;
@@ -194,23 +216,33 @@ nav ul li.disabled {
 }
 
 .searchathome {
-    background: color-mix(in srgb, rgba(255 255 255 0.2) 25%, transparent 75%);
-    ;
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 16px 32px rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 24px);
+    transform: translate(-50%, -50%);
+    background: rgba(12, 12, 15, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     border-radius: 20px;
     transition: 0.15s;
     text-wrap: none;
     width: max-content;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: auto;
 }
 
 .searchathome i {
-    margin-right: -3%;
-    margin-left: 2%;
+    margin-right: 0;
+    margin-left: 12px;
+    color: #ffffff;
 }
 
 .searchathome:has(#homesearch:focus) {
-    background: color-mix(in srgb, var(--bg-2) 50%, transparent 50%);
+    background: rgba(18, 18, 22, 0.92);
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 .hcontainer {
@@ -245,6 +277,7 @@ nav ul li.disabled {
     bottom: 15px;
     left: 17.5px;
     font-size: 14px;
+    color: #ffffff;
 }
 
 .settings-sidebar {
@@ -254,6 +287,7 @@ nav ul li.disabled {
     left: 0;
     margin: 4px;
     top: 0;
+    color: var(--text);
 }
 
 .settings-section {
@@ -263,14 +297,15 @@ nav ul li.disabled {
     cursor: pointer;
     transition: 0.2s;
     margin: 2px;
+    color: #ffffff;
 }
 
 .settings-section.active {
-    background: var(--bg-3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .settings-section:hover {
-    background: var(--bg-2);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .vflex {
@@ -280,6 +315,14 @@ nav ul li.disabled {
 
 .settings-section i {
     margin-right: 6px;
+    color: #ffffff;
+}
+
+.settings-sidebar,
+.settings-content-container,
+.settings-content-container h2,
+.settings-content-container p {
+    color: #ffffff;
 }
 
 .settings-content-container {
@@ -311,10 +354,11 @@ nav ul li.disabled {
     font-size: 24px;
     margin-bottom: 7px;
     font-weight: 550;
+    color: var(--text);
 }
 
 .settings-content-container p {
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 14px;
     font-weight: 350;
     margin-bottom: 7px;
@@ -322,6 +366,10 @@ nav ul li.disabled {
 
 .settings-page {
     display: none;
+}
+
+.settings-page * {
+    color: #ffffff;
 }
 
 .settings-page.settings-active {
@@ -1444,10 +1492,33 @@ span.online-count {
 .online-users {
     position: absolute;
     left: 50%;
-    bottom: 5px;
+    top: calc(50% + 96px);
     font-size: 15px;
     transform: translateX(-50%);
-    opacity: .45;
+    opacity: .7;
+    pointer-events: none;
+}
+
+@media (max-width: 720px) {
+    #homeContent h1 {
+        top: calc(50% - 106px);
+    }
+
+    #splash {
+        top: calc(50% - 50px);
+    }
+
+    .searchathome {
+        width: min(620px, calc(100vw - 24px));
+    }
+
+    .online-users {
+        top: calc(50% + 78px);
+    }
+}
+
+#homeContent br {
+    display: none;
 }
 
 .wispInput {
